@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   has_many :likes
 
   def update_post_counter
-    author.postscounter.nil? ? author.update(postscounter: 1) : author.update(postscounter: author.postscounter + 1)
+    author.update(postscounter: author.postscounter + 1)
   end
 
   def most_recent_comments

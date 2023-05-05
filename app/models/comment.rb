@@ -3,6 +3,6 @@ class Comment < ApplicationRecord
   belongs_to :post
 
   def update_comments_counter
-    post.commentscounter.nil? ? post.update(commentscounter: 1) : post.update(commentscounter: post.commentscounter + 1)
+    post.update(likescounter: post.likescounter + 1)
   end
 end
