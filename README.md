@@ -25,7 +25,7 @@
 
 # 📖 Blog App <a name="about-project"></a>
 
-Blog App is a Roby on Rails full-stack web application.
+Blog App is a Ruby on Rails full-stack web application.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -59,19 +59,63 @@ Blog App is a Roby on Rails full-stack web application.
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-Clone project
+To get a local copy up and running follow these simple example steps.
 
-```bash
-git clone https://github.com/jmonto55/blog-app.git
+### Prerequisites
 
-cd blog-app
+> You need the following tools be installed in your computer:
+
+> - [Rails](https://guides.rubyonrails.org/)
+> - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
+> - [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
+> - IDE
+> - Etc
+
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+  cd my-prefered-folder
+  
+  git clone https://github.com/jmonto55/blog-app.git
+
 ```
 
-Run the program
+### Install
 
-```bash
-rails s
-open localhost 3000
+Install this project with:
+
+```sh
+  cd blog-app
+  
+  bundle install
+```
+
+### 💾 Database
+
+Create the databases and run migrations with:
+
+```sh
+rails db:create
+rails db:migrate
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  rails server or rails s
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+
+```sh
+  rspec spec/
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
