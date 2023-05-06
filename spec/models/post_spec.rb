@@ -16,7 +16,14 @@ RSpec.describe Post, type: :model do
   end
 
   it 'title should be less than 250 characters, expected false' do
-    subject.title = 'It was a dark and stormy night, and the wind howled through the empty streets. Sarah huddled under her coat, wishing she had stayed home instead of venturing out into the storm. As she turned a corner, she saw a figure in the distance. At first she thought it was just a trick of the light, but as she got closer she realized it was a man. He was tall and thin, with a black cloak that billowed around him in the wind. Sarahs heart raced as she tried to hurry past him, but he stepped in front of her, blocking her way. She could see his eyes glinting in the darkness, and she knew she was in trouble.'
+    subject.title = 'It was a dark and stormy night, and the wind howled
+    through the empty streets.Sarah huddled under her coat, wishing she had
+    stayed home instead of venturing out into the storm. As she turned a corner,
+    she saw a figure in the distance. At first she thought it was just a trick of
+    the light, but as she got closer she realized it was a man. He was tall and thin,
+    with a black cloak that billowed around him in the wind. Sarahs heart raced as she
+    tried to hurry past him, but he stepped in front of her, blocking her way. She could
+    see his eyes glinting in the darkness, and she knew she was in trouble.'
     expect(subject).to_not be_valid
   end
 
@@ -51,7 +58,7 @@ RSpec.describe Post, type: :model do
   let(:user_one) { User.create(name: 'Tom', posts_counter: 0) }
   let(:post_one) { Post.create(author: user_one, title: 'Hello', likescounter: 0, commentscounter: 0) }
 
-  it 'last_five comments methods should return the last 5 comments related to the post' do
+  it 'last_five comments methods should return the last 5 comments related tothe post' do
     Comment.create(text: 'comment zero', post: post_one, author: user_one)
     Comment.create(text: 'comment one', post: post_one, author: user_one)
     Comment.create(text: 'comment two', post: post_one, author: user_one)
