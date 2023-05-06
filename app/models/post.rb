@@ -11,7 +11,7 @@ class Post < ApplicationRecord
     author.update(postscounter: author.postscounter + 1)
   end
 
-  def most_recent_comments
+  def last_five_comments
     comments.order(created_at: :desc).limit(5)
   end
 end
