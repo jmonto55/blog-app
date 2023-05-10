@@ -19,6 +19,5 @@ RSpec.describe 'Posts', type: :request do
     it 'include the correct text' do
       expect(response.body).to include('All users')
     end
-    
   end
 end
