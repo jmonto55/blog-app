@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts', type: :request do
+RSpec.describe 'Users', type: :request do
   describe 'ROOT /index' do
     before(:example) { get '/users' }
 
