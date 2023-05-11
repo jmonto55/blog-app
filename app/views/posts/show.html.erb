@@ -1,1 +1,26 @@
-<h1>user/post/show</h1>
+<section class="user-container">
+  <div class="posts-container">
+    <div class="post-comment-box">
+      <card class="post-item">
+        <div class="post-data-main">
+          <div class="post-header">
+            <p>Post <%= @post.id %> by <%= @post.author.name %> </p>
+            <div class="counter-data">
+              <h5 class="custom-card-p">Comments: <%= @post.comments_counter %> </h5>
+              <h5 class="custom-card-p">Likes: <%= @post.likes_counter %> </h5>
+            </div>
+          </div>
+          <p> <%= @post.text %> </p>
+        </div>
+      </card>
+      <div class="comments-box">
+        <% if @post.comments.empty? %>
+          <p> There are no comments for this post </p>
+        <% end %>
+        <% @post.comments.each do |comment| %>
+          <p> <%= comment.author.name %>: <%= comment.text %> </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
