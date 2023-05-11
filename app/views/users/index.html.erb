@@ -1,1 +1,16 @@
-<h1>All users</h1>
+<section class="home-container">
+  <h1>Welcome to RoR - Blogs</h1>
+  <div class="users-container">
+    <% @users.each do |user| %>
+      <%= link_to "/users/#{user.id}", remote: false do %>
+        <card class="user-item">
+          <img src='<%= user.photo %>'></img>
+          <div class="user-data">
+            <h2><%= user.name %></h2><br>
+            <h4 class="custom-card-t">Number of posts: <%= user.posts_counter %> </h4>
+          </div>
+        </card>
+      <% end %>
+    <% end %>
+  </div>
+</section>

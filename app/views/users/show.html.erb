@@ -1,1 +1,34 @@
-<h1>path: users/show</h1>
+<section class="user-container">
+  <card class="user-item">
+    <img src='<%= @user.photo %>'></img>
+    <div class="user-data">
+    <h2><%= @user.name %></h2><br>
+    <h4 class="custom-card-t">Number of posts: <%= @user.posts_counter %> </h4>
+    </div>
+  </card>
+  <div class="bio-container">
+    <p>Bio</p>
+    <p> <%= @user.bio %> </p>
+  </div>
+  <div class="posts-container">
+    <% @posts.each do |post| %>
+      <%= link_to "/users/#{@user.id}/posts/#{post.id}", remote: false do %>
+        <card class="post-item">
+          <div class="post-data">
+            <h2>Post <%= post.id %></h2>
+            <p> <%= post.text %> </p>
+            <div class="counter-data">
+              <h5 class="custom-card-p">Comments: <%= post.comments_counter %> </h5>
+              <h5 class="custom-card-p">Likes: <%= post.likes_counter %> </h5>
+            </div>
+          </div>
+        </card>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="main-btn">
+    <%= link_to "/users/#{@user.id}/posts", remote: false do %>
+      <p>See all posts </p>
+    <% end %>
+  </div>
+</section>
