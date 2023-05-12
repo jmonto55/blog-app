@@ -94,20 +94,27 @@ Install this project with:
 
 ### 💾 Database
 
-Create the databases and run migrations with:
+Create the databases,run migrations, and populate it with seed data:
 
 ```sh
 rails db:create
 rails db:migrate
+rails db:seed
 ```
 
 ### Usage
 
-To run the project, execute the following command:
+To run the project, you will need 2 terminals opened:
+- In the first run:
 
-```sh
-  rails server or rails s
-```
+    ```sh
+    rails tailwind:watch
+    ```
+- In the second run:
+
+    ```sh
+    rails s
+    ```
 
 ### Run tests
 
