@@ -1,1 +1,18 @@
-<h1>All users</h1>
+<section class="flex flex-col mb-24 w-full max-w-3xl">
+  <h1 class="text-zinc-200 text-3xl md:text-5xl mb-20">Welcome to Blog 📮</h1>
+  <ul class="flex flex-col gap-8">
+    <% @users.each do |user| %>
+      <li>
+        <%= link_to "/users/#{user.id}", remote: false do %>
+        <card class="flex items-center gap-8 bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25">
+          <%= image_tag(user.photo, class: "w-24 md:w-48 rounded-l-2xl") %>
+          <div class="py-2 flex h-24 w-80 justify-between">
+            <h2 class="text-2xl md:text-4xl text-zinc-200"><%= user.name %></h2><br>
+            <h4 class="text-zinc-200 self-end mr-4 md:mr-12">Number of posts: <%= user.posts_counter %> </h4>
+          </div>
+        </card>
+      <% end %>
+      </li>
+    <% end %>
+  </ul>
+</section>

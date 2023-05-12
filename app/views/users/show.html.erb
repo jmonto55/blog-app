@@ -1,1 +1,42 @@
-<h1>path: users/show</h1>
+<section class="flex flex-col justify-start w-full max-w-3xl">
+  <card class="relative flex items-center gap-8 bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25">
+    <%= image_tag(@user.photo, class: "w-24 md:w-48 rounded-l-2xl") %>
+    <div class="flex h-24 w-80 justify-between py-2">
+      <h2 class="text-2xl md:text-4xl text-zinc-200"><%= @user.name %></h2><br>
+      <h4 class="text-zinc-200 self-end mr-4 md:mr-12">Number of posts: <%= @user.posts_counter %> </h4>
+    </div>
+    <%= link_to "/users/#{@user.id}", remote: false do %>
+      <span class="text-zinc-200 text-opacity-50 material-symbols-outlined text-xs absolute top-2 right-2">back arrow_back_ios</span>
+    <% end %>
+    <%= link_to "/users", remote: false do %>
+      <span class="text-zinc-200 text-opacity-50 material-symbols-outlined text-xs absolute top-2 right-2">back arrow_back_ios</span>
+    <% end %>
+  </card>
+  <div class="mt-8 flex p-5 flex-col gap-8 bg-white bg-opacity-10 text-white rounded-md shadow-5xl border-2 border-t-0 border-l-0 border-white/25">
+    <p class="text-2xl">Bio</p>
+    <p> <%= @user.bio %> </p>
+  </div>
+  <ul class="mt-8 flex justify-center flex-col text-zinc-200 bg-white bg-opacity-10 text-white rounded-md shadow-5xl border-2 border-t-0 border-l-0 border-white/25">
+    <% @posts.each do |post| %>
+      <li class="p-5 border-b border-gray-500 border-opacity-60 last:border-b-0 flex flex-col justify-center hover:bg-neutral-800 transition duration-300">
+        <%= link_to "/users/#{@user.id}/posts/#{post.id}", remote: false do %>
+        <card class="post-item">
+          <div class="flex flex-col">
+            <h2>Post <%= post.id %></h2>
+            <p> <%= post.text %> </p>
+            <div class="flex gap-8 justify-end">
+              <h5 class="custom-card-p">Comments: <%= post.comments_counter %> </h5>
+              <h5 class="custom-card-p">❤️ <%= post.likes_counter %> </h5>
+            </div>
+          </div>
+        </card>
+      <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <button class="w-40 p-2 my-8 flex justify-center text-zinc-200 bg-white bg-opacity-10 text-white rounded-md shadow-5xl border-2 border-t-0 border-l-0 border-white/25 hover:scale-111 transition duration-300">
+    <%= link_to "/users/#{@user.id}/posts", remote: false do %>
+      <p class="m-auto">See all posts </p>
+    <% end %>
+  </button>
+</section>
