@@ -15,6 +15,9 @@ module.exports = {
       boxShadow: {
         '5xl': '20px 20px 50px rgba(0, 0, 0, 0.5)',
       },
+      scale: {
+        '111': '1.025',
+      },
     },
   },
   plugins: [
