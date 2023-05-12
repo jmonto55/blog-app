@@ -1,6 +1,6 @@
-<section class="flex flex-col mb-24">
+<section class="flex flex-col mb-24 w-full max-w-3xl">
   <card
-    class="flex items-center gap-8 bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25"
+    class="relative flex items-center gap-8 bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25"
   >
     <%= image_tag(@user.photo, class: "w-24 md:w-48 rounded-l-2xl") %>
     <div class="py-2 flex h-24 w-80 justify-between">
@@ -9,6 +9,9 @@
       <h4 class="text-zinc-200 self-end mr-4 md:mr-12">
         Number of posts: <%= @user.posts_counter %>
       </h4>
+      <%= link_to "/users/#{@user.id}", remote: false do %>
+        <span class="text-zinc-200 text-opacity-50 material-symbols-outlined text-xs absolute top-2 right-2">back arrow_back_ios</span>
+      <% end %>
     </div>
   </card>
   <ul class="mt-8 flex justify-center flex-col text-zinc-200 bg-white bg-opacity-10 text-white rounded-md shadow-5xl border-2 border-t-0 border-l-0 border-white/25">
