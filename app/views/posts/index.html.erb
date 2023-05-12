@@ -1,38 +1,43 @@
-<section class="user-container">
-  <card class="user-item">
-    <img src='<%= @user.photo %>'></img>
-    <div class="user-data">
-    <h2><%= @user.name %></h2><br>
-    <h4 class="custom-card-t">Number of posts: <%= @user.posts_counter %> </h4>
+<section class="flex flex-col mb-24">
+  <card
+    class="flex items-center gap-8 bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25"
+  >
+    <%= image_tag(@user.photo, class: "w-24 md:w-48 rounded-l-2xl") %>
+    <div class="py-2 flex h-24 w-80 justify-between">
+      <h2 class="text-2xl md:text-4xl text-zinc-200"><%= @user.name %></h2>
+      <br />
+      <h4 class="text-zinc-200 self-end mr-4 md:mr-12">
+        Number of posts: <%= @user.posts_counter %>
+      </h4>
     </div>
   </card>
-  <div class="posts-container">
+  <ul class="mt-8 flex justify-center flex-col text-zinc-200 bg-white bg-opacity-10 text-white rounded-md shadow-5xl border-2 border-t-0 border-l-0 border-white/25">
     <% @posts.each do |post| %>
-      <%= link_to "/users/#{@user.id}/posts/#{post.id}", remote: false do %>
-        <div class="post-comment-box">
-          <card class="post-item">
-            <div class="post-data">
-              <h2>Post <%= post.id %></h2>
-              <p> <%= post.text %> </p>
-              <div class="counter-data">
-                <h5 class="custom-card-p">Comments: <%= post.comments_counter %> </h5>
-                <h5 class="custom-card-p">Likes: <%= post.likes_counter %> </h5>
-              </div>
+      <li class="p-5 border-b border-gray-500 border-opacity-60 last:border-b-0 flex flex-col justify-center hover:bg-neutral-800 transition duration-300">
+        <%= link_to "/users/#{@user.id}/posts/#{post.id}", remote: false do %>
+        <card class="post-item">
+          <div class="flex flex-col">
+            <h2>Post <%= post.id %></h2>
+            <p> <%= post.text %> </p>
+            <div class="flex gap-8 justify-end">
+              <h5 class="custom-card-p">Comments: <%= post.comments_counter %> </h5>
+              <h5 class="custom-card-p">❤️ <%= post.likes_counter %> </h5>
             </div>
-          </card>
-          <div class="comments-box">
-            <% if post.comments.empty? %>
-              <p> There are no comments for this post </p>
-            <% end %>
-            <% post.comments.each do |comment| %>
-              <p> <%= comment.author.name %>: <%= comment.text %> </p>
-            <% end %>
           </div>
+        </card>
+        <div class="mt-8">
+          <% if post.comments.empty? %>
+            <p class="text-sm text-zinc-200 text-opacity-50 italic"> No comments yet. </p>
+          <% end %>
+          <% post.comments.each do |comment| %>
+            <p class="text-sm mt-2 ml-8"> <%= comment.author.name %>: <%= comment.text %> </p>
+          <% end %>
         </div>
       <% end %>
+      </li>
     <% end %>
-  </div>
-  <div class="main-btn">
-    <p>Pagination</p>
-  </div>
+  </ul>
+  <button class="w-40 p-2 my-8 flex justify-center text-zinc-200 bg-white bg-opacity-10 text-white rounded-md shadow-5xl border-2 border-t-0 border-l-0 border-white/25 hover:scale-111 transition duration-300">
+    <p class="m-auto">Pagination</p>
+  </button>
 </section>
