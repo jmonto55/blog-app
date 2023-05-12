@@ -32,7 +32,7 @@
           <% if post.comments.empty? %>
             <p class="text-sm text-zinc-200 text-opacity-50 italic"> No comments yet. </p>
           <% end %>
-          <% post.comments.each do |comment| %>
+          <% post.last_five_comments.each do |comment| %>
             <p class="text-sm mt-2 ml-8"> <%= comment.author.name %>: <%= comment.text %> </p>
           <% end %>
         </div>
