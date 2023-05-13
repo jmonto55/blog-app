@@ -4,7 +4,7 @@ class LikesController < ApplicationController
     if @new_like.save
       redirect_to "/users/#{params[:user_id]}/posts/#{params[:id]}", notice: 'You Liked this post!'
     else
-      render :new, status: :unprocessable_entity 
+      render :new, status: :unprocessable_entity
     end
   end
 end

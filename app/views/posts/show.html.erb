@@ -4,20 +4,27 @@
     <%= link_to "/users/#{@user.id}/posts", remote: false do %>
       <span class="text-zinc-200 text-opacity-50 material-symbols-outlined text-xs absolute top-4 right-4">back arrow_back_ios</span>
     <% end %>    
-  <div class="flex flex-col gap-4">
-        <p>Post <%= @post.id %> by <%= @post.author.name %> </p>
-        <p> <%= @post.text %> </p>
-        <div class="flex justify-end">
-          <h5 class="mr-8">Comments: <%= @post.comments_counter %> </h5>
-          <%= form_with(url: "/users/#{@post.user_id}/posts/#{@post.id}/add_like", method: :post) do |form| %>
+    <div class="flex flex-col gap-4">
+      <p>Post <%= @post.id %> by <%= @post.author.name %> </p>
+      <p> <%= @post.text %> </p>
+      <div class="flex justify-end">
+        <h5 class="mr-8">Comments: <%= @post.comments_counter %> </h5>
+        <%= form_with(url: "/users/#{@post.user_id}/posts/#{@post.id}/add_like", method: :post) do |form| %>
           <div class="flex gap-1">
             <%= form.submit '❤️ ', :class => "cursor-pointer" %>
           </div>
         <% end %>
-          <h5 class=""> <%= @post.likes_counter %> </h5>
-        </div>
+        <h5 class=""> <%= @post.likes_counter %> </h5>
       </div>
+    </div>
     <div class="">
+      <%= form_with url: "/users/#{@post.user_id}/posts/#{@post.id}/add_comment", method: :post, :class => 'main-form', local: true, scope: :comment do |f| %>
+        <div class="input-container">
+          <p>Add a comment:</p>
+          <%= f.text_area :text,  :maxlength => 250, :class => 'text-black' %>
+        </div>
+        <%= f.submit "Send", :class => 'p-1 w-16 mb-8 text-zinc-200 bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25'%>
+      <% end %>
       <% if @post.comments.empty? %>
         <p class="text-sm text-zinc-200 text-opacity-50 italic"> No comments yet. </p>
       <% end %>
