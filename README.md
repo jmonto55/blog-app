@@ -1,5 +1,7 @@
 <div align="center">
   <h1><b>Blog App</b></h1>
+  <img src="./app/assets/images/blog.png" alt="blog img" width="45%" />
+  <img src="./app/assets/images/blog_2.png" alt="blog img" width="45%" />
 </div>
 
 # 📗 Table of Contents
