@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   end
   get "/posts/new", to: "posts#new", as: :new_post
   post "/posts/create", to: "posts#create", as: :posts
+  post "/users/:user_id/posts/:id/add_like", to: "likes#add_like"
 end

@@ -7,9 +7,14 @@
   <div class="flex flex-col gap-4">
         <p>Post <%= @post.id %> by <%= @post.author.name %> </p>
         <p> <%= @post.text %> </p>
-        <div class="flex gap-8 justify-end">
-          <h5 class="">Comments: <%= @post.comments_counter %> </h5>
-          <h5 class="">❤️ <%= @post.likes_counter %> </h5>
+        <div class="flex justify-end">
+          <h5 class="mr-8">Comments: <%= @post.comments_counter %> </h5>
+          <%= form_with(url: "/users/#{@post.user_id}/posts/#{@post.id}/add_like", method: :post) do |form| %>
+          <div class="flex gap-1">
+            <%= form.submit '❤️ ', :class => "cursor-pointer" %>
+          </div>
+        <% end %>
+          <h5 class=""> <%= @post.likes_counter %> </h5>
         </div>
       </div>
     <div class="">
