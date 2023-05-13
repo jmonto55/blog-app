@@ -1,0 +1,20 @@
+<h1 class="text-zinc-200">New blog post</h1>
+
+<%= form_with model: @new_post do |form| %>
+    <% if form.object.errors.any? %>
+      <div>
+        <% form.object.errors.full_messages.each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+    <% end %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.label :text %>
+      <%= form.text_area :text %>
+    </div>
+    <%= form.button %>
+<% end %>
