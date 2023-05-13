@@ -1,0 +1,26 @@
+<section class="w-screen flex">
+  <div class="relative m-auto w-1/2 min-w-[360px] max-w-4xl items-center flex flex-col p-5 bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25">
+    <h1 class="text-zinc-200 mb-8">New blog post</h1>
+    <%= link_to "/users", remote: false do %>
+        <span class="text-zinc-200 text-opacity-50 material-symbols-outlined text-xs absolute top-2 right-2">back arrow_back_ios</span>
+    <% end %>
+    <%= form_with model: @new_post, :class => 'flex flex-col gap-4' do |form| %>
+      <% if form.object.errors.any? %>
+        <div>
+          <% form.object.errors.full_messages.each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="flex items-center gap-4">
+        <%= form.label :title %>
+        <%= form.text_field :title, :class => 'text-black w-[250px]' %>
+      </div>
+      <div class="flex items-center gap-4">
+        <%= form.label :text %>
+        <%= form.text_area :text, :class => 'text-black w-[250px]' %>
+      </div>
+      <%= form.button :class => 'm-auto w-48 bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25' %>
+    <% end %>
+  </div>
+</section>
