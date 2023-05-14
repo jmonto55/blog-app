@@ -1,8 +1,8 @@
-<section class="h-screen flex flex-col w-full max-w-3xl">
+<section class="flex flex-col w-full max-w-3xl">
   <card
     class="relative flex items-center gap-8 bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25"
   >
-    <%= image_tag(@user.photo, class: "w-24 md:w-48 rounded-l-2xl") %>
+    <%= image_tag(@user.photo, class: "w-24 md:w-40 rounded-l-2xl") %>
     <div class="py-2 flex h-24 w-80 justify-between">
       <h2 class="text-2xl md:text-4xl text-zinc-200"><%= @user.name %></h2>
       <br />
@@ -14,7 +14,7 @@
       <% end %>
     </div>
   </card>
-  <ul class="mt-8 flex justify-center flex-col text-zinc-200 bg-white bg-opacity-10 text-white rounded-md shadow-5xl border-2 border-t-0 border-l-0 border-white/25">
+  <ul class="mt-8 flex justify-center flex-col text-zinc-200 bg-white bg-opacity-10 rounded-md shadow-5xl border-2 border-t-0 border-l-0 border-white/25">
     <% @posts.each do |post| %>
       <li class="p-4 border-b border-gray-500 border-opacity-60 last:border-b-0 flex flex-col justify-center hover:bg-neutral-800 transition duration-300">
         <%= link_to "/users/#{@user.id}/posts/#{post.id}", remote: false do %>
@@ -40,7 +40,7 @@
       </li>
     <% end %>
   </ul>
-  <button class="w-40 p-2 my-8 flex justify-center text-zinc-200 bg-white bg-opacity-10 text-white rounded-md shadow-5xl border-2 border-t-0 border-l-0 border-white/25 hover:scale-111 transition duration-300">
+  <button class="w-40 p-2 my-8 flex justify-center text-zinc-200 bg-white bg-opacity-10 rounded-md shadow-5xl border-2 border-t-0 border-l-0 border-white/25 hover:scale-111 transition duration-300">
     <p class="m-auto">Pagination</p>
   </button>
 </section>
