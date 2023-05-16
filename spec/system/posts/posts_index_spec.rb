@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts index page', type: :feature do
+RSpec.describe 'Posts index page', type: :system do
   describe 'check the content of the index page' do
     before(:each) do
       @user = User.create(name: 'Jose', photo: 'pic.jpg', bio: 'software developer')
@@ -37,14 +37,14 @@ RSpec.describe 'Posts index page', type: :feature do
         expect(page).to have_content '❤️ 7'
       end
 
-      it 'When I click on a post, it redirects me to that post\'s show page.' do
-        click_link 'testing'
-        expect(current_path).to eq user_post_path(@user.id, @post.id)
-      end
-
       it 'if comments counter is integer' do
         @post.comments_counter = 8
         expect(@post).to be_valid
+      end
+
+      it 'When I click on a post, it redirects me to that post\'s show page.' do
+        click_link 'testing'
+        expect(page).to have_content("Post #{@post.id} by Jose")
       end
     end
   end
