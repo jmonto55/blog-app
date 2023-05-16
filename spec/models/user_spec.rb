@@ -28,9 +28,12 @@ RSpec.describe User, type: :model do
 
   it 'last_three_post methods should return the last 3 posts related to the user' do
     Post.create(author: user, title: 'This is a post', text: 'I feel aswesome', likes_counter: 0, comments_counter: 0)
-    Post.create(author: user, title: 'This is second post', text: 'I feel aswesome', likes_counter: 0, comments_counter: 0)
-    Post.create(author: user, title: 'This is third post', text: 'I feel aswesome', likes_counter: 0, comments_counter: 0)
-    Post.create(author: user, title: 'This is fourth post', text: 'I feel aswesome', likes_counter: 0, comments_counter: 0)
+    Post.create(author: user, title: 'This is second post', text: 'I feel aswesome', likes_counter: 0,
+                comments_counter: 0)
+    Post.create(author: user, title: 'This is third post', text: 'I feel aswesome', likes_counter: 0,
+                comments_counter: 0)
+    Post.create(author: user, title: 'This is fourth post', text: 'I feel aswesome', likes_counter: 0,
+                comments_counter: 0)
     expect(user.last_three_posts.length).to equal(3)
   end
 end

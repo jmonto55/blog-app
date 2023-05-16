@@ -56,7 +56,9 @@ RSpec.describe Post, type: :model do
   end
 
   let(:user_one) { User.create(name: 'Tom', posts_counter: 0) }
-  let(:post_one) { Post.create(author: user_one, title: 'Hello', text: 'I feel awesome', likes_counter: 0, comments_counter: 0) }
+  let(:post_one) do
+    Post.create(author: user_one, title: 'Hello', text: 'I feel awesome', likes_counter: 0, comments_counter: 0)
+  end
 
   it 'last_five comments methods should return the last 5 comments related tothe post' do
     Comment.create(text: 'comment zero', post: post_one, author: user_one)
