@@ -13,7 +13,8 @@ RSpec.describe 'Posts index page', type: :feature do
       background { visit user_posts_path(@user.id) }
 
       it 'I can see the user\'s profile picture.' do
-        expect(page.first('img')['src']).to have_content 'pic-374e2a3927f9388c669fa74572e0c3261b8a656597b600535b14bdd49399236a.jpg'
+        img_src = page.first('img')['src']
+        expect(img_src).to have_content 'pic-374e2a3927f9388c669fa74572e0c3261b8a656597b600535b14bdd49399236a.jpg'
       end
 
       it 'I can see the number of posts the user has written' do
