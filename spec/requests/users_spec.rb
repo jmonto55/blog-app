@@ -17,7 +17,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'include the correct text' do
-      expect(response.body).to include('All users')
+      expect(response.body).to include('Welcome to Blog 📮')
     end
   end
 end

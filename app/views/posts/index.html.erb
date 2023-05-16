@@ -29,12 +29,13 @@
           </div>
         </card>
         <div class="mt-8">
-          <% if post.comments.empty? %>
+          <% if !post.last_five_comments.any? %>
             <p class="text-sm text-zinc-200 text-opacity-50 italic"> No comments yet. </p>
-          <% end %>
-          <% post.last_five_comments.each do |comment| %>
-            <p class="text-sm mt-2 ml-8"> <%= comment.author.name %>: <%= comment.text %> </p>
-          <% end %>
+          <% else %>
+            <% post.last_five_comments.each do |comment| %>
+              <p class="text-sm mt-2 ml-8"> <%= comment.author.name %>: <%= comment.text %> </p>
+            <% end %>
+          <% end %>  
         </div>
       <% end %>
       </li>
