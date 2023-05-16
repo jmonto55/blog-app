@@ -25,6 +25,10 @@ RSpec.describe 'Posts index page', type: :system do
         expect(page).to have_content 'testing'
       end
 
+      it 'I can see the first comments on a post.' do
+        expect(page).to have_content 'My first comment'
+      end
+
       it 'I can see the user\'s username.' do
         expect(page).to have_content 'Jose'
       end
