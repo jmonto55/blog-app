@@ -30,12 +30,12 @@ RSpec.describe 'Test for the user show page', type: :system do
     visit user_path(@new_user)
     expect(page).to have_content('software engineer')
   end
-  it 'should see the user\'s last 3 posts only' do
+  it 'should see the user\'s first 3 posts only' do
     visit user_path(@new_user)
-    expect(page).to have_content('I feel awesome')
+    expect(page).to have_content('this is my first post')
+    expect(page).to have_content('why are you here?')
     expect(page).to have_content('Hello Rails')
-    expect(page).to have_content('this is true')
-    expect(page).not_to have_content('this is my first post')
+    expect(page).not_to have_content('this is true')
   end
   it 'User should see the see  a button that lets me view all of a user\'s posts' do
     visit user_path(@new_user)
