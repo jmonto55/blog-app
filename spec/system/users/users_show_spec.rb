@@ -4,11 +4,16 @@ RSpec.describe 'Test for the user show page', type: :system do
   context ' Check the right content for user show page' do
     before(:each) do
       @new_user = User.create(name: 'Salo', photo: 'pic.jpg', bio: 'software engineer', posts_counter: 0)
-      @post_one = Post.create(author: @new_user, title: 'Hello', text: 'this is my first post', comments_counter: 0, likes_counter: 0)
-      @post_two = Post.create(author: @new_user, title: 'Hallo', text: 'why are you here?', comments_counter: 0, likes_counter: 0)
-      @post_three = Post.create(author: @new_user, title: 'Chao', text: 'Hello Rails', comments_counter: 0, likes_counter: 0)
-      @post_four = Post.create(author: @new_user, title: 'Salute', text: 'I feel awesome', comments_counter: 0, likes_counter: 0)
-      @post_five = Post.create(author: @new_user, title: 'Hi', text: 'this is true', comments_counter: 0, likes_counter: 0)
+      @post_one = Post.create(author: @new_user, title: 'Hello', text: 'this is my first post', comments_counter: 0,
+                              likes_counter: 0)
+      @post_two = Post.create(author: @new_user, title: 'Hallo', text: 'why are you here?', comments_counter: 0,
+                              likes_counter: 0)
+      @post_three = Post.create(author: @new_user, title: 'Chao', text: 'Hello Rails', comments_counter: 0,
+                                likes_counter: 0)
+      @post_four = Post.create(author: @new_user, title: 'Salute', text: 'I feel awesome', comments_counter: 0,
+                               likes_counter: 0)
+      @post_five = Post.create(author: @new_user, title: 'Hi', text: 'this is true', comments_counter: 0,
+                               likes_counter: 0)
     end
 
     it 'User should see the other user\'s profile picture' do
