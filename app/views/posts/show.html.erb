@@ -1,6 +1,10 @@
 <section class="w-full max-w-64 flex flex-col max-w-3xl">
   <card class="relative p-4 flex flex-col gap-6 bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25">
-    <%= image_tag(@user.photo, class: "w-12 md:w-20 rounded-full") %>
+    <% if @user.photo.present? %>
+      <%= image_tag(@user.photo, class: "w-12 md:w-20 rounded-full") %>
+    <% else %>
+      <%= image_tag('pic.jpg', class: "w-12 md:w-20 rounded-full") %>
+    <% end %>
     <%= link_to "/users/#{@user.id}/posts", remote: false do %>
       <span class="text-zinc-200 text-opacity-50 material-symbols-outlined text-xs absolute top-4 right-4">back arrow_back_ios</span>
     <% end %>    
