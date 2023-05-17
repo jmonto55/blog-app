@@ -27,7 +27,7 @@
 
 # 📖 Blog App <a name="about-project"></a>
 
-Blog App is a Ruby on Rails full-stack web application.
+> Functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -70,17 +70,16 @@ To get a local copy up and running follow these simple example steps.
 > - [Rails](https://guides.rubyonrails.org/)
 > - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
 > - [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
-> - IDE
-> - Etc
+
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```sh
-  cd my-prefered-folder
+cd my-prefered-folder
   
-  git clone https://github.com/jmonto55/blog-app.git
+git clone https://github.com/jmonto55/blog-app.git
 
 ```
 
@@ -89,9 +88,9 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd blog-app
+cd blog-app
   
-  bundle install
+bundle
 ```
 
 ### 💾 Database
@@ -101,22 +100,16 @@ Create the databases,run migrations, and populate it with seed data:
 ```sh
 rails db:create
 rails db:migrate
-rails db:seed
 ```
 
 ### Usage
 
-To run the project, you will need 2 terminals opened:
-- In the first run:
+To run the project run the following commands:
 
-    ```sh
-    rails tailwind:watch
-    ```
-- In the second run:
-
-    ```sh
-    rails s
-    ```
+```sh
+rails tailwindcss:build
+rails s
+```
 
 ### Run tests
 
@@ -124,17 +117,29 @@ To run tests, run the following command:
 
 
 ```sh
-  rspec spec/
+rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Authors <a name="author"></a>
+
+👤 **Nilton Segura**
+
+- GitHub: [@Nkaleth](https://github.com/Nkaleth)
+- Twitter: [@NoeSeguraL](https://twitter.com/NoeSeguraL)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/niltonsegura/)
 
 👤 **Jose Montoya**
 
 - GitHub: [@jmonto55](https://github.com/jmonto55)
 - LinkedIn: [jmontodev](https://www.linkedin.com/in/jmontodev/)
+
+👤 **Dennis Every**
+
+- GitHub: [@dennis-every](https://github.com/dennis-every)
+- Twitter: [@dennis_every](https://twitter.com/dennis_every)
+- LinkedIn: [dennis-every](https://www.linkedin.com/in/dennis-every/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

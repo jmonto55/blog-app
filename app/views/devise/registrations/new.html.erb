@@ -1,0 +1,36 @@
+<div class="p-5 w-80 flex flex-col items-center bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25">
+  <h2 class="text-zinc-200">Sign up</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25') do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+  
+    <div class="field">
+      <%= f.label :name, class: "text-zinc-200" %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "text-black" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email, class: "text-zinc-200" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text-black" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, class: "text-zinc-200" %>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class: "text-black" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation, class: "text-zinc-200" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "text-black mb-8" %>
+    </div>
+
+    <div class="actions text-zinc-200">
+      <%= f.submit "Sign up", class: "cursor-pointer bg-white bg-opacity-10 text-white rounded-2xl shadow-5xl border-2 border-t-0 border-l-0 border-white/25 p-2" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
