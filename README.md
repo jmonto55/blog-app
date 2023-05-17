@@ -27,7 +27,7 @@
 
 # 📖 Blog App <a name="about-project"></a>
 
-Blog App is a Ruby on Rails full-stack web application.
+> Functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -115,6 +115,7 @@ To run the project, you will need 2 terminals opened:
 - In the second run:
 
     ```sh
+    rails tailwindcss:build
     rails s
     ```
 
@@ -129,12 +130,24 @@ To run tests, run the following command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Authors <a name="author"></a>
+
+👤 **Nilton Segura**
+
+- GitHub: [@Nkaleth](https://github.com/Nkaleth)
+- Twitter: [@NoeSeguraL](https://twitter.com/NoeSeguraL)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/niltonsegura/)
 
 👤 **Jose Montoya**
 
 - GitHub: [@jmonto55](https://github.com/jmonto55)
 - LinkedIn: [jmontodev](https://www.linkedin.com/in/jmontodev/)
+
+👤 **Dennis Every**
+
+- GitHub: [@dennis-every](https://github.com/dennis-every)
+- Twitter: [@dennis_every](https://twitter.com/dennis_every)
+- LinkedIn: [dennis-every](https://www.linkedin.com/in/dennis-every/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
