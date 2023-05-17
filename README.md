@@ -106,13 +106,8 @@ rails db:seed
 
 ### Usage
 
-To run the project, you will need 2 terminals opened:
-- In the first run:
-
-    ```sh
-    rails tailwind:watch
-    ```
-- In the second run:
+To run the project run the following commands:
+``
 
     ```sh
     rails tailwindcss:build
